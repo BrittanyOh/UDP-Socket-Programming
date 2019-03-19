@@ -31,12 +31,12 @@ new line.
 message back to all known active clients (i.e. the clients that the server has received messages
 from within the past 15 seconds), including the one the message is received from.
 
-<br>Clients should be invoked by the following command:
-&lt;client> &lt;server IP> &lt;server port>
-<br>Where &lt;client> is the name of the client executable file name, &lt;server IP> is the IP address
-of the server, &lt;server port> is the UDP port of the server.
-<br>Note that multiple clients could be running at the same time, communicating with the same server.
+<p>Clients should be invoked by the following command:
+<i> &lt;client> &lt;server IP> &lt;server port></i>
+<p>Where <i>&lt;client></i> is the name of the client executable file name, <i>&lt;server IP></i> is the IP address
+  of the server, <i>&lt;server port></i> is the UDP port of the server.
+<p>Note that multiple clients could be running at the same time, communicating with the same server.
 The server should be invoked by the following command:
-&lt;server> &lt;port>
-<br>Where &lt;server> is the name of the server executable file name, &lt;port> is the port the server
+  <i>&lt;server> &lt;port></i>
+<p>Where <i>&lt;server></i> is the name of the server executable file name, <i>&lt;port></i> is the port the server
 listens to.
