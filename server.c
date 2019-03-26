@@ -16,4 +16,10 @@ int main(int argc, char **argv){
   struct sockaddr_in servaddr; //server address
   struct sockaddr_in cliaddr; //client address
   char buffer[MAXLINE]; //message buffer
+
+  //Check commandline for correct arguments
+  if (argc !=2){
+    fprintf(stderr, "REQUIRED FORMAT: %s <port>\n", argv[0]);
+    exit(EXIT_FAILURE);
+  }
 }
