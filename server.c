@@ -34,4 +34,17 @@ int main(int argc, char **argv){
     printf("Successfully created socket :) ... \n");
   }
 
+  //Fill server information
+  servaddr.sin_family = AF_INET;
+  servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+  servaddr.sin_port = htons((unsigned short) port_num);
+
+ //Bind socket with server Address
+ if(bind(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr)) < 0){
+   fprintf(stderr, "Bind failed :()");
+   exit(EXIT_FAILURE);
+ }
+ else{
+   printf("Successfully binded socket :) ... \n");
+ }
 }
