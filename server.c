@@ -22,4 +22,16 @@ int main(int argc, char **argv){
     fprintf(stderr, "REQUIRED FORMAT: %s <port>\n", argv[0]);
     exit(EXIT_FAILURE);
   }
+
+  port_num = atoi(argv[1]); //save entered port number
+
+  //Creating socket
+  if( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0){
+    fprintf(stderr, "Failed to create socket. :()");
+    exit(EXIT_FAILURE);
+  }
+  else{
+    printf("Successfully created socket :) ... \n");
+  }
+
 }
