@@ -13,6 +13,7 @@
 int main(int argc, char **argv){
   int sockfd; //socket
   int port_num; //listening port
+  int client_len;
   struct sockaddr_in servaddr; //server address
   struct sockaddr_in cliaddr; //client address
   char buffer[MAXLINE]; //message buffer
@@ -47,4 +48,7 @@ int main(int argc, char **argv){
  else{
    printf("Successfully binded socket :) ... \n");
  }
+
+
+
 }

@@ -46,4 +46,11 @@ int main(int argc, char *argv[]){
   else{
     printf("Successfully found host :) ... \n");
   }
+
+  //Fill server information
+  bzero((char *) &servaddr, sizeof(servaddr));
+  servaddr.sin_family = AF_INET;
+  bcopy((char *)server->h_addr,
+  (char *)&servaddr.sin_addr.s_addr, server->h_length);
+  servaddr.sin_port = htons(port_num);
 }
