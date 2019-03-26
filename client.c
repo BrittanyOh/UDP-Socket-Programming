@@ -7,14 +7,13 @@
 #include <netinet/in.h>
 #include <netdb.h>
 
-#define PORT 8080
 #define MAXLINE 1000
 
 int main(int argc, char *argv[]){
-  int sockfd, port_num;
-  char *ipaddr;
-  char buffer[MAXLINE];
-  struct sockaddr_in servaddr;
+  int sockfd, port_num; //listening socket and port number
+  char *ipaddr;  //server's IP address
+  char buffer[MAXLINE]; //message buffer
+  struct sockaddr_in servaddr; //server address
 
   //Check commandline for correct arguments
   if (argc !=3){
