@@ -11,6 +11,7 @@
 #define MAXLINE 1000
 
 int main(int argc, char *argv[]){
+  int n;
   int sockfd, port_num; //listening socket and port number
   char *ipaddr;  //server's IP address
   in_addr_t data;
@@ -53,4 +54,10 @@ int main(int argc, char *argv[]){
   bcopy((char *)server->h_addr,
   (char *)&servaddr.sin_addr.s_addr, server->h_length);
   servaddr.sin_port = htons(port_num);
+
+  bzero(buffer, MAXLINE);
+  printf("Enter a string: ");
+
+  n = 0;
+  while ((buffer[n++] = getchar()) != '\n');
 }
