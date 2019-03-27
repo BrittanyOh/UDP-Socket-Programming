@@ -57,17 +57,11 @@ int main(int argc, char *argv[]){
   servaddr.sin_port = htons(port_num);
 
   bzero(buffer, MAXLINE);
-  printf("Enter a string: ");
+  printf("Choose action: ");
+  fgets(buffer, MAXLINE, stdin);
 
-  n = 0;
-  while ((buffer[n++] = getchar()) != '\n');
-  if( *buffer =='s'){
-           bzero(buffer, MAXLINE);
-         printf("Enter a string:");
-         n = 0;
-         while ((buffer[n++] = getchar()) != '\n')
-             ;
-         strcat(temp_buffer, buffer);
-         printf("Sending server: %s... \n", temp_buffer);
-       }
+  if((n = sendto(sockfd, buffer, strlen(buffer), 0, &servaddr, sizeof(servaddr)) )< 0){
+    fprintf(stderr, "Error in sendto :(");
+  }
+
 }
