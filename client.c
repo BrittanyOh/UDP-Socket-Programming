@@ -60,6 +60,11 @@ int main(int argc, char *argv[]){
   printf("Choose action: ");
   fgets(buffer, MAXLINE, stdin);
 
+  if (*buffer =='q'){
+    printf("Ending program...\n");
+    return 0;
+  }
+
   if((n = sendto(sockfd, buffer, strlen(buffer), 0, &servaddr, sizeof(servaddr)) )< 0){
     fprintf(stderr, "Error in sendto :(");
   }
