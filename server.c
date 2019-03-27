@@ -12,6 +12,7 @@
 
 int main(int argc, char **argv){
   int sockfd; //socket
+  int n;
   int port_num; //listening port
   int client_len;
   struct sockaddr_in servaddr; //server address
@@ -47,6 +48,8 @@ int main(int argc, char **argv){
  }
  else{
    printf("Successfully binded socket :) ... \n");
+ }
+
  }
 
 
