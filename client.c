@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
   char *ipaddr;  //server's IP address
   in_addr_t data;
   char buffer[MAXLINE]; //message buffer
+  char temp_buffer[MAXLINE];
   struct sockaddr_in servaddr; //server address
   struct hostent *server;
 
@@ -60,4 +61,13 @@ int main(int argc, char *argv[]){
 
   n = 0;
   while ((buffer[n++] = getchar()) != '\n');
+  if( *buffer =='s'){
+           bzero(buffer, MAXLINE);
+         printf("Enter a string:");
+         n = 0;
+         while ((buffer[n++] = getchar()) != '\n')
+             ;
+         strcat(temp_buffer, buffer);
+         printf("Sending server: %s... \n", temp_buffer);
+       }
 }
